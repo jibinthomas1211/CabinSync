@@ -34,20 +34,73 @@ A guest management system combining an Android mobile app with a lightweight Adm
 
 ### Admin Web
 
-![Admin Login](Screenshots/Admin%20Web/Admin%20Login%20Page.png)
-![Manage User](Screenshots/Admin%20Web/Manage%20User.png)
-![Manage Authority](Screenshots/Admin%20Web/Manage%20Authority.png)
-![Authority Status](Screenshots/Admin%20Web/Authority%20Status.png)
-![Guest Entry Details](Screenshots/Admin%20Web/Guest%20Entry%20Details.png)
+<p>
+  <img src="Screenshots/Admin%20Web/Admin%20Login%20Page.png" alt="Admin Login" width="320">
+  <br/>
+  <em>Admin Login:</em> Secure login screen for administrators to access the dashboard.
+</p>
+
+<p>
+  <img src="Screenshots/Admin%20Web/Manage%20User.png" alt="Manage User" width="320">
+  <br/>
+  <em>Manage User:</em> Create, view, update, and remove user accounts.
+</p>
+
+<p>
+  <img src="Screenshots/Admin%20Web/Manage%20Authority.png" alt="Manage Authority" width="320">
+  <br/>
+  <em>Manage Authority:</em> Maintain authority profiles, roles, and permissions.
+</p>
+
+<p>
+  <img src="Screenshots/Admin%20Web/Authority%20Status.png" alt="Authority Status" width="320">
+  <br/>
+  <em>Authority Status:</em> Monitor status changes and approvals for authorities.
+</p>
+
+<p>
+  <img src="Screenshots/Admin%20Web/Guest%20Entry%20Details.png" alt="Guest Entry Details" width="320">
+  <br/>
+  <em>Guest Entry Details:</em> Review guest visits with date, purpose, contact, and status.
+</p>
 
 ### Mobile App
 
-![Splash Screen](Screenshots/User%20Mobile/Splash%20Screen.jpg)
-![Login Page](Screenshots/User%20Mobile/Login%20Page.jpg)
-![User Home Page](Screenshots/User%20Mobile/User%20Home%20Page.jpg)
-![Guest Registration](Screenshots/User%20Mobile/Guest%20Registration.jpg)
-![Scheduling Page](Screenshots/User%20Mobile/Scheduling%20Page.jpg)
-![Chat Assist](Screenshots/User%20Mobile/Chat%20Assist.jpg)
+<p>
+  <img src="Screenshots/User%20Mobile/Splash%20Screen.jpg" alt="Splash Screen" width="320">
+  <br/>
+  <em>Splash Screen:</em> App launch screen introducing CabinSync.
+</p>
+
+<p>
+  <img src="Screenshots/User%20Mobile/Login%20Page.jpg" alt="Login Page" width="320">
+  <br/>
+  <em>Login Page:</em> User authentication to access app features.
+</p>
+
+<p>
+  <img src="Screenshots/User%20Mobile/User%20Home%20Page.jpg" alt="User Home Page" width="320">
+  <br/>
+  <em>User Home:</em> Main dashboard with quick actions and navigation.
+</p>
+
+<p>
+  <img src="Screenshots/User%20Mobile/Guest%20Registration.jpg" alt="Guest Registration" width="320">
+  <br/>
+  <em>Guest Registration:</em> Capture guest details and contact information.
+</p>
+
+<p>
+  <img src="Screenshots/User%20Mobile/Scheduling%20Page.jpg" alt="Scheduling Page" width="320">
+  <br/>
+  <em>Scheduling:</em> Request and manage meetings with date and purpose.
+</p>
+
+<p>
+  <img src="Screenshots/User%20Mobile/Chat%20Assist.jpg" alt="Chat Assist" width="320">
+  <br/>
+  <em>Chat Assist:</em> Conversational helper for guidance and quick support.
+</p>
 
 ## Key Mobile Screens (from Manifest)
 - `splash_screen` (Launcher)
