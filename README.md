@@ -14,6 +14,32 @@ A guest management system combining an Android mobile app with a lightweight Adm
 - **Search & Filters**: Date filter for reports; organized tables for quick review.
 - **Realtime Sync**: Firebase powers instantaneous updates between mobile and web admin.
 
+## Problem Addressed
+In many organizations, authority personnel are often busy with meetings, field visits, or other duties. Employees and visitors may make unnecessary trips to cabins only to find authorities unavailable. CabinSync solves this by providing real-time availability status updates for authority persons, allowing users and guests to plan visits efficiently and reduce wasted time.
+
+## Modules & Functionalities
+
+### 1. User Module (Organization Members)
+- **Login**: Secure authentication for accessing the app.
+- **Authority Status**: View real-time availability of authority persons before planning visits.
+- **Schedules**: Check upcoming meetings and scheduled appointments.
+- **Settings**: Manage user profile, update passwords, and customize preferences.
+
+### 2. Guest Module (External Visitors)
+- **Guest Registration**: Register with name, contact details, and purpose of visit.
+- **Appointment Scheduling**: Request meetings with authority persons and view appointment details.
+- **Authority Status**: Check the availability of the concerned authority person before visiting.
+- **Settings**: Manage appointments; update visit details; cancel or reschedule visits.
+
+### 3. Admin Module (Web Panel)
+- **Manage Users**: Add, update, delete, and reset passwords for employees and guests.
+- **Update Authority Status**: Manually update or override availability status when needed.
+- **Manage Authority Personnel**: Add or update details of authority persons.
+- **Report Generation**: Generate visitor logs, appointment reports, and analyze visitor trends.
+
+### Security Personnel Support
+- **Credential Verification**: Security staff can verify guest details by scanning credentials before granting access.
+
 ## Tech Stack
 - **Android**: Kotlin, AndroidX, Material Components, Navigation, ViewBinding.
 - **Web Admin**: HTML/CSS/JS (ES modules), Firebase Web SDK.
@@ -150,9 +176,6 @@ The APK will be under `app/build/outputs/apk/debug/`.
 ## Notes
 - Sensitive configs (Firebase keys) are currently included for demo. For production, manage secrets securely.
 - Consider role-based auth for admin pages if deploying publicly.
-
-## Contributing
-Pull requests are welcome. Please open issues for bugs or feature requests.
 
 ## Acknowledgements
 - Firebase Web SDK & Google Services
