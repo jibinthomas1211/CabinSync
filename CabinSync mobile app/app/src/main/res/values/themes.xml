@@ -1,0 +1,48 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.CabinSync" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+
+        <!-- Fully transparent status bar -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+
+        <!-- Enable fullscreen mode while keeping system bars visible -->
+        <item name="android:fitsSystemWindows">false</item>
+
+        <!-- Ensure content is drawn behind system bars -->
+        <item name="android:windowTranslucentStatus">true</item>
+
+        <!-- Optional: Make the navigation bar transparent too -->
+        <item name="android:navigationBarColor">@color/primary</item>
+    </style>
+
+    <style name="datepicker" parent="ThemeOverlay.MaterialComponents.MaterialCalendar">
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryVariant">@color/primary</item>
+
+    </style>
+
+    <style name="Theme.CabinSync" parent="Base.Theme.CabinSync" />
+
+    <style name="Theme.CabinSync.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.CabinSync.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.CabinSync.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="App.Custom.Indictaor" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/secondary</item>
+    </style>
+
+    <style name="DateTextStyle" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textColor">@color/primary</item>
+    </style>
+
+    <style name="WeekDayTextStyle" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:textColor">@color/primary</item>
+    </style>
+
+</resources>

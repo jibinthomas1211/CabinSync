@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/user_home_frag"
+        android:icon="@drawable/home"
+        android:title="Home" />
+    <item
+        android:id="@+id/user_schedules_frag"
+        android:icon="@drawable/calendar"
+        android:title="Schedules" />
+    <item
+        android:id="@+id/chat_assist_frag"
+        android:icon="@drawable/support_agent"
+        android:title="Assist" />
+    <item
+        android:id="@+id/user_settings_frag"
+        android:icon="@drawable/settings"
+        android:title="Settings" />
+</menu>

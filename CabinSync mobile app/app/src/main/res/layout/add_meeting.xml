@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="20dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/custom_design">
+
+        <TextView
+            android:id="@+id/textView50"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/longreach"
+            android:text="Enter Meeting Details"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView51"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/roboto"
+            android:text="Date"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView50" />
+
+        <EditText
+            android:id="@+id/editTextText6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:backgroundTint="@color/black"
+            android:ems="10"
+            android:fontFamily="@font/roboto"
+            android:hint="dd/mm/yyyy"
+            android:inputType="date"
+            android:maxLength="10"
+            android:textColor="@color/black"
+            android:textColorHint="@color/hint"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView51" />
+
+        <TextView
+            android:id="@+id/textView52"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/roboto"
+            android:text="Meeting Purpose"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/editTextText6"
+            app:layout_constraintTop_toBottomOf="@+id/editTextText6" />
+
+        <EditText
+            android:id="@+id/editTextText7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/black"
+            android:ems="10"
+            android:fontFamily="@font/roboto"
+            android:inputType="text"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/editTextText6"
+            app:layout_constraintStart_toStartOf="@+id/editTextText6"
+            app:layout_constraintTop_toBottomOf="@+id/textView52" />
+
+        <TextView
+            android:id="@+id/textView53"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/roboto"
+            android:text="No Of Peoples"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/editTextText7"
+            app:layout_constraintTop_toBottomOf="@+id/editTextText7" />
+
+        <EditText
+            android:id="@+id/editTextText8"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/black"
+            android:ems="10"
+            android:fontFamily="@font/roboto"
+            android:inputType="number"
+            android:maxLength="2"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/editTextText7"
+            app:layout_constraintStart_toStartOf="@+id/editTextText7"
+            app:layout_constraintTop_toBottomOf="@+id/textView53" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/savebutton"
+            android:layout_width="125dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/primary"
+            android:fontFamily="@font/patuaone"
+            android:text="Save"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/cancelbutton2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextText8" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/cancelbutton2"
+            android:layout_width="125dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/red"
+            android:fontFamily="@font/patuaone"
+            android:text="Cancel"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/savebutton"
+            app:layout_constraintTop_toBottomOf="@+id/editTextText8" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

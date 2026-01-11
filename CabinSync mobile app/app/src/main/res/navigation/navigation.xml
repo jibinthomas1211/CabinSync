@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/user_home_frag">
+
+    <fragment
+        android:id="@+id/user_home_frag"
+        android:name="com.example.cabinsync.fragments.user_home_frag"
+        android:label="user_home_frag"
+        tools:layout="@layout/user_home_frag" />
+    <fragment
+        android:id="@+id/user_schedules_frag"
+        android:name="com.example.cabinsync.fragments.user_schedules_frag"
+        android:label="user_schedules_frag"
+        tools:layout="@layout/user_schedules_frag" />
+    <fragment
+        android:id="@+id/chat_assist_frag"
+        android:name="com.example.cabinsync.fragments.chat_assist_frag"
+        android:label="chat_assist_frag"
+        tools:layout="@layout/chat_assist_frag" />
+    <fragment
+        android:id="@+id/user_settings_frag"
+        android:name="com.example.cabinsync.fragments.user_settings_frag"
+        android:label="user_settings_frag"
+        tools:layout="@layout/user_settings_frag" />
+</navigation>

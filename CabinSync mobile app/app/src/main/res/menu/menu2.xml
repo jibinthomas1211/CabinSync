@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/guest_home_frag2"
+        android:icon="@drawable/home"
+        android:iconTint="@color/white"
+        android:title="Home" />
+    <item
+        android:id="@+id/guest_personal_frag2"
+        android:icon="@drawable/profile1"
+        android:iconTint="@color/white"
+        android:title="Personnel" />
+    <item
+        android:id="@+id/chat_assist_frag3"
+        android:icon="@drawable/support_agent"
+        android:iconTint="@color/white"
+        android:title="Assist" />
+    <item
+        android:id="@+id/guest_settings_frag2"
+        android:icon="@drawable/settings"
+        android:iconTint="@color/white"
+        android:title="Settings" />
+</menu>

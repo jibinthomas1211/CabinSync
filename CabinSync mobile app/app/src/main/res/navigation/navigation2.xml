@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation2"
+    app:startDestination="@id/guest_home_frag2">
+
+    <fragment
+        android:id="@+id/guest_home_frag2"
+        android:name="com.example.cabinsync.fragments.guest_home_frag"
+        android:label="guest_home_frag"
+        tools:layout="@layout/guest_home_frag" />
+    <fragment
+        android:id="@+id/guest_personal_frag2"
+        android:name="com.example.cabinsync.fragments.guest_personal_frag"
+        android:label="guest_personal_frag"
+        tools:layout="@layout/guest_personal_frag" />
+    <fragment
+        android:id="@+id/chat_assist_frag3"
+        android:name="com.example.cabinsync.fragments.chat_assist_frag"
+        android:label="chat_assist_frag"
+        tools:layout="@layout/chat_assist_frag" />
+    <fragment
+        android:id="@+id/guest_settings_frag2"
+        android:name="com.example.cabinsync.fragments.guest_settings_frag"
+        android:label="guest_settings"
+        tools:layout="@layout/guest_settings" />
+</navigation>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CabinSync - Dashboard</title>
+    <style>
+        @font-face {
+            font-family: 'longreach';
+            src: url('assets/font/longreach.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'patuaone';
+            src: url('assets/font/patuaone.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'roboto';
+            src: url('assets/font/roboto.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0px;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+
+            text-align: center;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #1E293B;
+            border-bottom: 2px solid white;
+            color: white;
+            font-family: 'longreach';
+            font-size: large;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .profile-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .profile-icon {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            color: white;
+            font-size: 16px;
+            letter-spacing: 2px;
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: white;
+            min-width: 120px;
+            border: 1px solid #ccc;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+            border-radius: 8px;
+        }
+
+        .dropdown button {
+            width: 100%;
+            padding: 10px;
+            background: none;
+            border: none;
+            text-align: left;
+            font-family: 'patuaone';
+            font-size: 14px;
+            cursor: pointer;
+            color: #1E293B;
+        }
+
+        .dropdown button:hover {
+            background-color: #f0f0f0;
+        }
+
+
+        .profile-icon img {
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+
+        .menu-item {
+            background: #1E293B;
+            padding: 20px;
+            border-radius: 10px;
+            width: 100px;
+            height: 100px;
+            margin: 15px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .menu-item:hover {
+            background: #324362;
+        }
+
+        .menu-item img {
+            height: 50px;
+            margin-bottom: 10px;
+        }
+
+        .menu1 p {
+            font-weight: bold;
+            font-size: 14px;
+            text-align: center;
+            font-family: 'patuaone';
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+            color: black;
+            font-family: 'patuaone';
+            font-weight: bold;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        @media (max-width: 768px) {
+            .menu {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .menu-item {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="assets/img/logo.svg" alt="CabinSync Logo">
+            <span style="font-size: 36px; letter-spacing: 2px;">CABINSYNC</span>
+        </div>
+        <div class="profile-container">
+            <div class="profile-icon" id="profileToggle">
+                <span>Admin</span>
+                <img src="assets/img/profile.png" alt="User Profile" />
+            </div>
+            <div class="dropdown" id="profileDropdown">
+                <button id="logoutBtn">Logout</button>
+            </div>
+        </div>
+
+    </div>
+    <div class="menu">
+        <div class="menu1"><a href="manage_authority.html">
+                <div class="menu-item">
+                    <img src="assets/img/icon1.svg" alt="Manage Authority">
+                </div>
+                <p>MANAGE<br>AUTHORITY</p>
+            </a>
+        </div>
+        <div class="menu1"> <a href="authority_status.html">
+                <div class="menu-item">
+                    <img src="assets/img/icon2.svg" alt="Authority Status">
+                </div>
+                <p>AUTHORITY<br>STATUS</p>
+            </a>
+        </div>
+        <div class="menu1"> <a href="manage_user.html">
+                <div class="menu-item">
+                    <img src="assets/img/icon3.svg" alt="Manage User">
+                </div>
+                <p>MANAGE<br>USER</p>
+            </a>
+        </div>
+        <div class="menu1"> <a href="report.html">
+                <div class="menu-item">
+                    <img src="assets/img/icon4.svg" alt="Guest-Entry Report">
+                </div>
+                <p>GUEST-ENTRY<br>REPORT</p>
+            </a>
+        </div>
+        <!-- <div class="menu1"> <a href="manage_authority.html">
+            <div class="menu-item">
+                <img src="assets/img/icon5.svg" alt="Manage Account">
+            </div>
+            <p>MANAGE<br>ACCOUNT</p>
+        </a>
+        </div> -->
+    </div>
+    <div class="footer">
+        <p>Copyright @ CabinSync | All Rights Reserved</p>
+    </div>
+</body>
+
+<script>
+    // Toggle dropdown on click
+    const profileToggle = document.getElementById("profileToggle");
+    const profileDropdown = document.getElementById("profileDropdown");
+
+    profileToggle.addEventListener("click", () => {
+        profileDropdown.style.display = profileDropdown.style.display === "block" ? "none" : "block";
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener("click", (event) => {
+        if (!event.target.closest(".profile-container")) {
+            profileDropdown.style.display = "none";
+        }
+    });
+
+    // Handle logout
+    document.getElementById("logoutBtn").addEventListener("click", () => {
+        // Add your logout logic here, for example:
+        alert("Logging out...");
+        window.location.href = "index.html"; // redirect to login page
+    });
+</script>
+
+
+</html>

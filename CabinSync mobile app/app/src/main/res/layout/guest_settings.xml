@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".fragments.guest_settings_frag">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/primary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="48dp"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="@font/longreach"
+                android:text="settings"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:src="@drawable/profile"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout7" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/patuaone"
+            android:text="Jibin Thomas"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/textView17"
+            app:layout_constraintStart_toEndOf="@+id/imageView7"
+            app:layout_constraintTop_toTopOf="@+id/imageView7" />
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/patuaone"
+            android:text="Guest User"
+            android:textColor="@color/hint"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+            app:layout_constraintStart_toEndOf="@+id/imageView7"
+            app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout8"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            android:background="@color/hint"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView7">
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button7"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:background="@android:color/transparent"
+            android:drawableLeft="@drawable/pending"
+            android:drawableRight="@drawable/right_arrow"
+            android:drawablePadding="5dp"
+            android:drawableTint="@color/black"
+            android:fontFamily="@font/roboto"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:text="Manage Appointments"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout8" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button8"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:background="@android:color/transparent"
+            android:drawableLeft="@drawable/terms_conditions"
+            android:drawableRight="@drawable/right_arrow"
+            android:drawablePadding="5dp"
+            android:drawableTint="@color/black"
+            android:fontFamily="@font/roboto"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:text="Terms &amp; conditions"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button7" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button9"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:background="@android:color/transparent"
+            android:drawableLeft="@drawable/contact_support"
+            android:drawableRight="@drawable/right_arrow"
+            android:drawablePadding="5dp"
+            android:drawableTint="@color/black"
+            android:fontFamily="@font/roboto"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:text="Help &amp; Support"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/button8"
+            app:layout_constraintStart_toStartOf="@+id/button8"
+            app:layout_constraintTop_toBottomOf="@+id/button8" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button10"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:background="@android:color/transparent"
+            android:drawableLeft="@drawable/about"
+            android:drawableRight="@drawable/right_arrow"
+            android:drawablePadding="5dp"
+            android:drawableTint="@color/black"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:text="About Us"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/button9"
+            app:layout_constraintStart_toStartOf="@+id/button9"
+            app:layout_constraintTop_toBottomOf="@+id/button9"
+            android:fontFamily="@font/roboto" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button11"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:background="@android:color/transparent"
+            android:drawableLeft="@drawable/delete"
+            android:drawablePadding="5dp"
+            android:drawableTint="@color/red"
+            android:fontFamily="@font/roboto"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:text="Delete Account"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textColor="@color/red"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/button10"
+            app:layout_constraintStart_toStartOf="@+id/button10"
+            app:layout_constraintTop_toBottomOf="@+id/button10" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

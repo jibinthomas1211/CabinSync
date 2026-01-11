@@ -1,0 +1,112 @@
+@font-face {
+    font-family: 'longreach';
+    src: url('assets/font/longreach.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+body {
+    background-color: #1E293B;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    max-width: 900px;
+}
+.logo-section {
+    flex: 1;
+    text-align: center;
+    margin-right: 20%;
+}
+.logo-section h1 {
+    font-size: 24px;
+    margin-top: 10px;
+}
+.login-box {
+    background: white;
+    color: black;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    width: 350px;
+    height: 400px;
+    transition: background 0.3s ease;
+}
+.login-box h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: 'longreach', Arial, sans-serif; 
+}
+.login-box p {
+    margin-bottom: 20px;
+}
+.login-box label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.login-box input {
+    width: 100%; 
+    border: none;
+    border-bottom: 2px solid black;
+    outline: none;
+    background: transparent;
+    margin-bottom: 20px;
+}
+.login-box a {
+    float: right;
+    font-size: 12px;
+    color: black;
+    text-decoration: none;
+}
+.login-box button {
+    width: 100%;
+    padding: 10px;
+    background: #1E293B;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+.login-box button:hover {
+    background: #16202d;
+}
+.footer {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+}
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .login-box {
+        background: rgba(255, 255, 255, 0.8);
+    }
+    .logo-section {
+        position: absolute;
+        top: 10%;
+    }
+}

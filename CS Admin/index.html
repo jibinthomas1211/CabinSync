@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CabinSync - Admin Login</title>
+    <style>
+        @font-face {
+            font-family: 'longreach';
+            src: url('assets/font/longreach.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'patuaone';
+            src: url('assets/font/patuaone.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'roboto';
+            src: url('assets/font/roboto.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0px;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #1E293B;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h2 {
+            letter-spacing: 3px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;
+            max-width: 900px;
+        }
+
+        .logo-section {
+            flex: 1;
+            text-align: center;
+            margin-right: 20%;
+        }
+
+        .logo-section h1 {
+            font-size: 36px;
+            margin-top: 10px;
+            font-family: 'longreach';
+        }
+
+        .login-box {
+            background: white;
+            color: black;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin-left: 50px;
+            width: 350px;
+            height: 350px;
+        }
+
+        .login-box h2 {
+            font-size: 20px;
+            font-weight: bold;
+            font-family: 'longreach';
+        }
+
+        .login-box p {
+            margin-bottom: 20px;
+            font-family: 'patuaone';
+        }
+
+        .login-box label {
+            font-size: 14px;
+            margin-bottom: 30px;
+            font-family: 'roboto';
+        }
+
+        .login-box input {
+            width: 100%;
+            border: none;
+            border-bottom: 2px solid black;
+            outline: none;
+            background: transparent;
+            margin-bottom: 20px;
+            font-family: 'roboto';
+        }
+
+        .login-box a {
+            float: right;
+            font-size: 12px;
+            color: black;
+            text-decoration: none;
+            font-family: 'roboto';
+        }
+
+        .login-box button {
+            width: 100%;
+            padding: 10px;
+            background: #1E293B;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+            font-family: 'patuaone';
+        }
+
+        .login-box button:hover {
+            background: #16202d;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+            font-family: 'patuaone';
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .login-box {
+                background: rgba(255, 255, 255, 0.8);
+            }
+
+            .logo-section {
+                position: absolute;
+                top: 10%;
+            }
+        }
+    </style>
+    <script>
+        function goToNextPage() {
+            window.location.href = 'adminpage.html';
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo-section">
+            <img src="assets/img/logo.svg" alt="Logo">
+            <h1>CABINSYNC</h1>
+        </div>
+        <div class="login-box">
+            <h2>ADMIN LOGIN</h2>
+            <p>Sign in to Continue</p>
+            <label style="margin-top: 40px;">Username</label>
+            <input type="text" id="username" required><br>
+            <label>Password</label>
+            <input type="password" id="password" required>
+            <b><a href="#">Forget Password?</a></b>
+            <button onclick="goToNextPage()">Sign in</button>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Copyright @ CabinSync | All Rights Reserved</p>
+    </div>
+    <script>
+        function goToNextPage() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === 'Admin' && password === '12345') {
+                window.location.href = 'adminpage.html';
+            } else {
+                alert('Invalid credentials. Please try again.');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CabinSync</title>
+    <style>
+        @font-face {
+            font-family: 'longreach';
+            src: url('assets/font/longreach.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'patuaone';
+            src: url('assets/font/patuaone.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'roboto';
+            src: url('assets/font/roboto.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0px;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #1E293B;
+            border-bottom: 2px solid white;
+            color: white;
+            font-family: 'longreach';
+            font-size: large;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .profile-icon img {
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+
+        .search-add {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 4px;
+            align-items: center;
+            margin: 10px auto;
+            width: 90%;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        h2 {
+            margin: 0;
+            font-weight: bold;
+            font-family: 'longreach';
+        }
+
+        .search {
+            display: flex;
+            align-items: center;
+            background-color: #f0f0f0;
+            padding: 8px;
+            border-radius: 10px;
+            border: 2px solid black;
+        }
+
+        .search input {
+            border: none;
+            background: none;
+            outline: none;
+            margin-left: 8px;
+            font-family: 'patuaone';
+        }
+
+        .table-container {
+            flex-grow: 1;
+            overflow-y: auto;
+            width: 90%;
+            margin: auto;
+            border: 2px solid black;
+            border-radius: 10px 10px 0 0;
+            padding-bottom: 10px;
+            scrollbar-width: none;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        thead {
+            position: sticky;
+            top: 0;
+            background-color: #1E293B;
+            color: white;
+            z-index: 2;
+            font-family: 'patuaone';
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+            font-family: 'roboto';
+        }
+
+        th {
+            background-color: #1E293B;
+            color: white;
+            font-family: 'patuaone';
+            position: sticky;
+        }
+
+        .status-dropdown {
+            padding: 4px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            font-family: 'roboto';
+            outline: none;
+            text-align: center;
+        }
+
+        .status-dropdown option {
+            background-color: white;
+            color: black;
+            border-radius: 0 10px;
+            text-align: left;
+        }
+
+        .status-dropdown.available {
+            background-color: #2676B3;
+            color: white;
+        }
+
+        .status-dropdown.away {
+            background-color: #BD2D2D;
+            color: white;
+        }
+
+
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            padding: 5px;
+            font-family: 'patuaone';
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="assets/img/logo.svg" alt="CabinSync Logo">
+            <span style="font-size: 36px; letter-spacing: 2px;">CABINSYNC</span>
+        </div>
+        <div class="profile-icon">
+            <img src="assets/img/profile.png" alt="User Profile">
+        </div>
+    </div>
+    <div class="search-add">
+        <h2 style='flex-grow: 1;'>AUTHORITY PERSONNELS STATUS</h2>
+        <div class="search">
+            <input type="text" placeholder="Search" id="searchInput">
+        </div>
+
+    </div>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th style="padding-left: 40px;">Name</th>
+                    <th>Department</th>
+                    <th>Designation</th>
+                    <th>Location</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="authorityTableBody">
+                
+            </tbody>
+        </table>
+    </div>
+    <div class="footer">Copyright © CabinSync | All Rights Reserved</div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js"></script>
+    
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+        import { getDatabase, ref, onValue, update } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
+    
+        const firebaseConfig = {
+            apiKey: "AIzaSyCuT-EuUhQ-u9tGBgku4FmiYKTBwlg4LMk",
+            authDomain: "cabinsync-97406.firebaseapp.com",
+            databaseURL: "https://cabinsync-97406-default-rtdb.firebaseio.com",
+            projectId: "cabinsync-97406",
+            storageBucket: "cabinsync-97406.appspot.com",
+            messagingSenderId: "11620501071",
+            appId: "1:11620501071:web:64040e5be54202930fcc3a",
+            measurementId: "G-YY3CFVG8RV"
+        };
+    
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+    
+        function loadData(searchTerm = "") {
+            const tableBody = document.getElementById("authorityTableBody");
+            const authorityRef = ref(database, "Authority");
+    
+            onValue(authorityRef, (snapshot) => {
+                tableBody.innerHTML = "";
+    
+                snapshot.forEach((childSnapshot) => {
+                    const key = childSnapshot.key;
+                    const data = childSnapshot.val();
+    
+                    const term = searchTerm.toLowerCase();
+                    const matches =
+                        data.name.toLowerCase().includes(term) ||
+                        data.id.toLowerCase().includes(term);
+    
+                    if (matches || searchTerm === "") {
+                        const row = document.createElement("tr");
+                        row.classList.add("fade-in");
+    
+                        // Set status value dynamically
+                        const currentStatus = data.status || "Available"; // Default to Available if not present
+    
+                        row.innerHTML = `
+                            <td style="padding-left: 40px;">${data.name}<br><span style="color: #7B7B7B; font-size: 14px;">${data.id}</span></td>
+                            <td>${data.department}</td>
+                            <td>${data.designation}</td>
+                            <td>${data.location}</td>
+                            <td>
+                                <select class="status-dropdown ${currentStatus.toLowerCase()}"
+                                    data-key="${key}"
+                                    onchange="this.className='status-dropdown ' + (this.value === 'Available' ? 'available' : 'away');
+                                    window.updateStatus(this)">
+                                    <option value="Available" ${currentStatus === "Available" ? "selected" : ""}>Available</option>
+                                    <option value="Away" ${currentStatus === "Away" ? "selected" : ""}>Away</option>
+                                </select>
+                            </td>
+                        `;
+                        tableBody.appendChild(row);
+                    }
+                });
+            });
+        }
+
+        // Listen to search input changes
+        document.getElementById("searchInput").addEventListener("input", (e) => {
+            const searchTerm = e.target.value;
+            loadData(searchTerm);
+        });
+    
+        // Update status in Firebase
+        window.updateStatus = function (dropdown) {
+            try{
+            const key = dropdown.getAttribute("data-key");
+            const newStatus = dropdown.value;
+    
+            const statusRef = ref(database, `Authority/${key}`);
+            update(statusRef, { status: newStatus })
+                .then(() => console.log(`Status updated to ${newStatus} for ${key}`))
+                .catch((error) => console.error("Error updating status:", error));
+                alert(`Status updated to ${newStatus} for ${key}`);
+            }
+            catch (err){
+                alert(err.message);
+            }
+        };
+    
+        // Load all data on page load
+        window.addEventListener("DOMContentLoaded", () => {
+            loadData(); // loads all data initially
+        });
+    </script>   
+</body>
+</html>

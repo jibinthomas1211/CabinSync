@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CabinSync</title>
+    <style>
+        @font-face {
+            font-family: 'longreach';
+            src: url('assets/font/longreach.otf') format('opentype');
+        }
+
+        @font-face {
+            font-family: 'patuaone';
+            src: url('assets/font/patuaone.ttf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'roboto';
+            src: url('assets/font/roboto.ttf') format('truetype');
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #1E293B;
+            border-bottom: 2px solid white;
+            color: white;
+            font-family: 'longreach';
+            font-size: large;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .profile-icon img {
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+
+        .search-add {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 4px;
+            margin: 10px auto;
+            width: 90%;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        h2 {
+            margin: 0;
+            font-weight: bold;
+            font-family: 'longreach';
+        }
+
+        .search {
+            display: flex;
+            align-items: center;
+            background-color: #f0f0f0;
+            padding: 8px;
+            border-radius: 10px;
+            border: 2px solid black;
+        }
+
+        .search input {
+            border: none;
+            background: none;
+            outline: none;
+            margin-left: 8px;
+            font-family: 'patuaone';
+        }
+
+        .add-button {
+            background-color: #1E293B;
+            color: white;
+            padding: 8px 46px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-family: 'patuaone';
+            border: 2px solid #1E293B;
+        }
+
+        .add-button:hover {
+            background: #324362;
+        }
+
+        .table-container {
+            position: relative;
+            flex-grow: 1;
+            overflow-y: auto;
+            width: 90%;
+            margin: auto;
+            border: 2px solid black;
+            border-radius: 10px 10px 0 0;
+            padding-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        thead {
+            position: sticky;
+            top: 0;
+            background-color: #1E293B;
+            color: white;
+            font-family: 'patuaone';
+            z-index: 2;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+            font-family: 'roboto';
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            padding: 5px;
+            font-family: 'patuaone';
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        @media print {
+            body * {
+                visibility: hidden;
+                /* hide everything by default */
+            }
+
+            .table-container,
+            .table-container * {
+                visibility: visible;
+                /* show only table container */
+            }
+
+            .table-container {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                overflow: visible !important;
+            }
+
+            /* Hide checkboxes during print */
+            input[type="checkbox"] {
+                display: none !important;
+            }
+
+            /* Ensure background colors print */
+            table,
+            thead,
+            tbody,
+            tr,
+            th,
+            td {
+                -webkit-print-color-adjust: exact !important;
+                /* Chrome, Safari */
+                print-color-adjust: exact !important;
+                /* Firefox */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="assets/img/logo.svg" alt="CabinSync Logo" />
+            <span style="font-size: 36px; letter-spacing: 2px;">CABINSYNC</span>
+        </div>
+        <div class="profile-icon">
+            <img src="assets/img/profile.png" alt="User Profile" />
+        </div>
+    </div>
+
+    <div class="search-add">
+        <h2 style="flex-grow: 1;">USER-ENTRY REPORT</h2>
+        <div class="search">
+            <input type="date" id="searchdate" />
+        </div>
+    </div>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th style="padding-left: 30px;"><input type="checkbox" id="selectAll" /></th>
+                    <th>Name</th>
+                    <th>Date of Visit</th>
+                    <th>Purpose of Visit</th>
+                    <th>Contact Number</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="guestTableBody"></tbody>
+        </table>
+    </div>
+
+    <div class="search-add">
+        <h2 style="flex-grow: 1;"></h2>
+        <button class="add-button" id="allowBtn">Allow</button>
+        <button class="add-button" style="background-color: #BD2D2D;" id="denyBtn">Deny</button>
+        <button class="add-button" id="printBtn">Print Report</button>
+    </div>
+
+    <div class="footer">Copyright © CabinSync | All Rights Reserved</div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+        import { getDatabase, ref, onValue, update } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyCuT-EuUhQ-u9tGBgku4FmiYKTBwlg4LMk",
+            authDomain: "cabinsync-97406.firebaseapp.com",
+            databaseURL: "https://cabinsync-97406-default-rtdb.firebaseio.com",
+            projectId: "cabinsync-97406",
+            storageBucket: "cabinsync-97406.appspot.com",
+            messagingSenderId: "11620501071",
+            appId: "1:11620501071:web:64040e5be54202930fcc3a",
+            measurementId: "G-YY3CFVG8RV"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+
+        // Convert YYYY-MM-DD to DD/MM/YYYY
+        function formatDate(dateStr) {
+            if (!dateStr) return "";
+            const [year, month, day] = dateStr.split("-");
+            return `${day}/${month}/${year}`;
+        }
+
+        function loadAuthorityData(selectedDate = "") {
+    const tableBody = document.getElementById("guestTableBody");
+    const authorityRef = ref(database, "Guest");
+    const formattedDate = formatDate(selectedDate);
+
+    onValue(authorityRef, (snapshot) => {
+        tableBody.innerHTML = "";
+
+        if (!snapshot.exists()) return;
+
+        const guestData = snapshot.val();
+
+        Object.entries(guestData).forEach(([guestId, guest]) => {
+            const name = guest.name || "Unknown";
+            const email = guest.email || "";
+            const phone = guest.phone || "";
+
+            const meetings = guest.Meetings || {};
+            Object.entries(meetings).forEach(([meetingId, meeting]) => {
+                if (!meeting || typeof meeting !== "object") return;
+
+                const match = formattedDate === "" || meeting.date === formattedDate;
+                if (!match) return;
+
+                const row = document.createElement("tr");
+                row.setAttribute("data-key", `${guestId}/Meetings/${meetingId}`);
+                row.innerHTML = `
+                    <td style="padding-left: 30px;"><input type="checkbox"></td>
+                    <td>${name}<br><span style="color: #7B7B7B; font-size: 14px;">${email}</span></td>
+                    <td>${meeting.date || ""}</td>
+                    <td>${meeting.purpose || ""}</td>
+                    <td>${phone}</td>
+                    <td>${meeting.status || "Pending"}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        });
+    });
+}
+
+
+
+        // Load all on page load
+        window.addEventListener("DOMContentLoaded", () => {
+            loadAuthorityData();
+        });
+
+        // Date input event
+        document.getElementById("searchdate").addEventListener("input", (e) => {
+            loadAuthorityData(e.target.value);
+        });
+
+        // Update status for selected
+        function updateStatusForSelected(status) {
+    const rows = document.querySelectorAll("#guestTableBody tr");
+    rows.forEach(row => {
+        const checkbox = row.querySelector("input[type='checkbox']");
+        if (checkbox.checked) {
+            const keyPath = row.getAttribute("data-key"); // guestId/Meetings/meetingId
+            const entryRef = ref(database, `Guest/${keyPath}`);
+            update(entryRef, { status });
+        }
+    });
+}
+
+
+
+        document.getElementById("allowBtn").addEventListener("click", () => {
+            updateStatusForSelected("Allowed");
+        });
+
+        document.getElementById("denyBtn").addEventListener("click", () => {
+            updateStatusForSelected("Denied");
+        });
+
+        // Select all checkbox
+        document.getElementById("selectAll").addEventListener("change", function () {
+            const isChecked = this.checked;
+            document.querySelectorAll("#guestTableBody input[type='checkbox']").forEach(cb => {
+                cb.checked = isChecked;
+            });
+        });
+
+        document.getElementById("printBtn").addEventListener("click", () => {
+            // Optional: Hide everything except the table before printing
+            document.body.classList.add('print-mode');
+
+            // Trigger print dialog
+            window.print();
+
+            // After print, remove the class to restore view
+            window.onafterprint = () => {
+                document.body.classList.remove('print-mode');
+            };
+        });
+
+    </script>
+</body>
+
+</html>
